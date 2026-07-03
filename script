@@ -5,6 +5,8 @@ async function getDevice() {
 }
 //deploy
 const p = document.getElementById("rssi")
+const button = document.getElementById("click")
+button.addEventListener(getDevice)
 while(true){ 
     p.innerHTML = device.rssi
 }
