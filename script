@@ -11,7 +11,7 @@ async function connectToAirPods() {
   }
   console.log("clicked")
 }
-
+// pls github god deploy without failing pls
 const p = document.getElementById("rssi")
 const button = document.getElementById("click")
 const device = button.addEventListener("click", connectToAirPods)
