@@ -3,6 +3,7 @@ async function getDevice() {
     acceptAllDevices: true
     })
 }
+//deploy
 const p = document.getElementById("rssi")
 while(true){ 
     p.innerHTML = device.rssi
