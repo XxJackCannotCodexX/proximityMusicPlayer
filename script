@@ -2,7 +2,7 @@ async function connectToAirPods() {
   try {
     return await navigator.bluetooth.requestDevice({
       filters: [{ services: ['battery_service'] }],
-      acceptAllDevices: false, 
+      acceptAllDevices: true, 
       optionalServices: ['device_information'] 
     });
     await connectToGATTServer(device);
