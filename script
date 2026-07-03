@@ -1,13 +1,20 @@
-async function getDevice() {
-    const device = await navigator.bluetooth.requestDevice({
-    acceptAllDevices: true
-    })
+async function connectToAirPods() {
+  try {
+    return await navigator.bluetooth.requestDevice({
+      filters: [{ services: ['battery_service'] }],
+      acceptAllDevices: false, 
+      optionalServices: ['device_information'] 
+    });
+    await connectToGATTServer(device);
+  } catch (error) {
+    return "error"
+  }
 }
 //deploy
 const p = document.getElementById("rssi")
 const button = document.getElementById("click")
-button.addEventListener(getDevice)
+const device = button.addEventListener(getDevice)
 while(true){ 
-    p.innerHTML = device.rssi
+    p.innerHTML = device
 }
     
