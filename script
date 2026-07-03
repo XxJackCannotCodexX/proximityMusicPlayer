@@ -1,0 +1,8 @@
+const device = await navigator.bluetooth.requestDevice({
+    acceptAllDevices: true
+})
+p = document.getElementById("rssi")
+while(true){ 
+    p.innerHTML = device.rssi
+}
+    
