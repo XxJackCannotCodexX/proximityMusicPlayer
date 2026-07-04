@@ -15,9 +15,4 @@ async function connectToAirPods() {
 const p = document.getElementById("rssi")
 const button = document.getElementById("click")
 const device = button.addEventListener("click", connectToAirPods)
-// if (device) {
-//     while(true){ 
-//         p.innerHTML = device.rssi
-//     }
-// }
 
