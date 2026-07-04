@@ -2,7 +2,7 @@ async function connectToAirPods() {
   try {
     return await navigator.bluetooth.requestDevice({
       filters: [{ services: ['battery_service'] }],
-      acceptAllDevices: true, 
+      acceptAllDevices: false, 
       optionalServices: ['device_information'] 
     });
     await connectToGATTServer(device);
@@ -11,8 +11,14 @@ async function connectToAirPods() {
   }
   console.log("clicked")
 }
-// pls github god deploy without failing pls
+
 const p = document.getElementById("rssi")
 const button = document.getElementById("click")
 const device = button.addEventListener("click", connectToAirPods)
-
+// while(true){ 
+//     p.innerHTML = device
+// }
+while(true){ 
+    p.innerHTML = device.rssi
+}
+    
